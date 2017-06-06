@@ -14,6 +14,15 @@ def build_job = folder + "/build-job"
     'string' "ansible-job"
   }
     }
+	triggers{
+	 gitlabPush {
+            buildOnMergeRequestEvents(true)
+            buildOnPushEvents(true)
+            enableCiSkip(true)
+            setBuildDescription(true)
+            rebuildOpenMergeRequest('never')
+            
+       } }
 		
 	steps {
 	
