@@ -270,7 +270,21 @@ def nexus = folder + "/nexus_deploy"
     }
 	shell('ansible-playbook -i hosts playbook.yml -u ec2-user')
 	
-}	}
+}
+	publishers{
+	
+		 downstreamParameterized {
+            trigger('nexus_deploy') {
+            condition('SUCCESS')
+                parameters {
+                      predefinedProp('CUSTOM_WORKSPACE', '$WORKSPACE')
+					  predefinedProp('CUSTOM_BUILD_ID', '$BUILD_ID')
+
+                }
+            }
+      }  }
+	
+	}
 	 
 	 
 	
