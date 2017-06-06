@@ -241,7 +241,6 @@ def nexus = folder + "/nexus_deploy"
     }
 	
 	steps {
-	shell('ansible-playbook -i hosts playbook.yml -u ec2-user')
 	scm {
 		
         git{
@@ -263,6 +262,7 @@ def nexus = folder + "/nexus_deploy"
             }
         }
     }
+	shell('ansible-playbook -i hosts playbook.yml -u ec2-user')
 	
 }	}
 	 
