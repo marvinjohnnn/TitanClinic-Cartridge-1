@@ -172,8 +172,8 @@ def failed = folder + "/failure"
             trigger('nexus_deploy') {
             condition('SUCCESS')
                 parameters {
-                      predefinedProp('CUSTOM_WORKSPACE', '$WORKSPACE')
-					  predefinedProp('CUSTOM_BUILD_ID', '$BUILD_ID')
+                      predefinedProp('CUSTOM_WORKSPACE', '$CUSTOM_WORKSPACE')
+					  predefinedProp('CUSTOM_BUILD_ID', '$CUSTOM_BUILD_ID')
 
                 }
             }
