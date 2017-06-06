@@ -199,6 +199,12 @@ def failed = folder + "/failure"
 def nexus = folder + "/nexus_deploy"
 	freeStyleJob(nexus)
 	{
+	steps{
+	parameters {
+				stringParam('CUSTOM_BUILD_ID')
+				stringParam('CUSTOM_WORKSPACE')
+			}	}
+                 
 	 customWorkspace('$CUSTOM_WORKSPACE')
 		steps {
         nexusArtifactUploader {
