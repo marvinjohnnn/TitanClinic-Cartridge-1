@@ -1,8 +1,8 @@
-folder( "draft" ){
+folder( "SUPERMAN" ){
 
 }
 
-def folder = "draft"
+def folder = "SUPERMAN"
 def build_job = folder + "/build-job"
 
 
