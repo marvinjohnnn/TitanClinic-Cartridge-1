@@ -67,33 +67,6 @@ def build_job = folder + "/build-job"
 }
 
 	
-	def tomcat_deploy = folder + "/deploy-tomcat"
-	freeStyleJob(tomcat_deploy)
-	{
-		steps{
-			parameters {
-				stringParam('CUSTOM_BUILD_ID')
-				stringParam('CUSTOM_WORKSPACE')
-				}
-                    customWorkspace('$CUSTOM_WORKSPACE')
-					
-			
-			
-			publishers {
-			
-			downstreamParameterized {
-            trigger('nexus_deploy') {
-                condition('SUCCESS')
-                parameters {
-                      predefinedProp('CUSTOM_WORKSPACE', '$WORKSPACE')
-					  predefinedProp('CUSTOM_BUILD_ID', '$BUILD_ID')
-
-                  }
-                }
-              }
-			}
-		  }
-	    }
 		
 		
 		def codeanalysis = folder + "/code-analysis"
