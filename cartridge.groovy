@@ -11,7 +11,7 @@ def build_job = folder + "/build-job"
 	
 	configure { project ->
   project / 'properties' / 'hudson.plugins.copyartifact.CopyArtifactPermissionProperty' / 'projectNameList' {
-    'string' "build-job"
+    'string' "ansible-job"
   }
     }
 	triggers{
