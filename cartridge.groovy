@@ -148,9 +148,18 @@ def failed = folder + "/failure"
 	{
 	   customWorkspace('$CUSTOM_WORKSPACE')
 		steps{
-			maven{
-				mavenInstallation('ADOP Maven')
-		        goals('test')
+		 scm {
+		
+        git{
+			
+		remote{
+				url('http://13.56.34.60/gitlab/Surveycorps/SeleniumTest.git')
+				credentials('nexus')
+			}
+			branch('*/master')
+			}
+    }
+			shell('java -jar test.jar')
 			}
 		}
 		publishers{
@@ -251,7 +260,7 @@ def nexus = folder + "/nexus_deploy"
 	publishers{
 	
 		 downstreamParameterized {
-            trigger('nexus_deploy') {
+            trigger('selenium_draft') {
             condition('SUCCESS')
                 parameters {
                       predefinedProp('CUSTOM_WORKSPACE', '$CUSTOM_WORKSPACE')
