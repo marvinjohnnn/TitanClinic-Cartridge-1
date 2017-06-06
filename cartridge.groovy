@@ -244,7 +244,7 @@ def nexus = folder + "/nexus_deploy"
             flatten()
             optional()
             buildSelector {
-                latestSuccessful(true)
+                workspace()
             }
         }
     }
