@@ -241,6 +241,12 @@ def nexus = folder + "/nexus_deploy"
     }
 	
 	steps {
+		wrappers {
+			preBuildCleanup {
+				includePattern('**/target/**')
+				deleteDirectories()
+				cleanupParameter('CLEANUP')
+			}}
 	scm {
 		
         git{
