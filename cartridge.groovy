@@ -161,7 +161,7 @@ def failed = folder + "/failure"
     }
 			shell('java -jar test.jar')
 			}
-		}
+		
 		publishers{
 	
 		 downstreamParameterized {
@@ -174,6 +174,7 @@ def failed = folder + "/failure"
                 }
             }
       }  }
+	  }
     
 		
 	
