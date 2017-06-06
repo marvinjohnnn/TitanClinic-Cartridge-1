@@ -207,7 +207,7 @@ def nexus = folder + "/nexus_deploy"
             artifactId('TitanClinic')
             type('war')
             classifier('')
-            file('titanclinic.war')
+            file('target/titanclinic.war')
         }
         }
 	     
