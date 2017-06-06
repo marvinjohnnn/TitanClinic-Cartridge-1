@@ -19,6 +19,7 @@ def build_job = folder + "/build-job"
             buildOnMergeRequestEvents(true)
             buildOnPushEvents(true)
             enableCiSkip(true)
+			comments(true)
             setBuildDescription(true)
             rebuildOpenMergeRequest('never')
             
