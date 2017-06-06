@@ -148,6 +148,10 @@ def failed = folder + "/failure"
 	{
 	   customWorkspace('$CUSTOM_WORKSPACE')
 		steps{
+			parameters {
+				stringParam('CUSTOM_BUILD_ID')
+				stringParam('CUSTOM_WORKSPACE')
+				}
 		 scm {
 		
         git{
