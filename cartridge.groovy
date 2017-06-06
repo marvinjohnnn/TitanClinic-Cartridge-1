@@ -126,7 +126,7 @@ configure {
 	
           
 		 downstreamParameterized {
-            trigger('deploy-tomcat') {
+            trigger('ansible-job') {
             condition('SUCCESS')
                 parameters {
                       predefinedProp('CUSTOM_WORKSPACE', '$WORKSPACE')
