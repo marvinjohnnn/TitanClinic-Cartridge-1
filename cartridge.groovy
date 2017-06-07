@@ -207,7 +207,7 @@ def nexus = folder + "/nexus_deploy"
             artifactId('TitanClinic')
             type('war')
             classifier('')
-            file('target/titanclinic.war')
+            file('target/titanclinic1.war')
         }
         }
 	     
@@ -249,7 +249,7 @@ def nexus = folder + "/nexus_deploy"
 			branch('*/master')
 			}
         copyArtifacts('build-job') {
-            includePatterns('titanclinic.war')
+            includePatterns('target/titanclinic1.war')
 
             targetDirectory('')
             flatten()
