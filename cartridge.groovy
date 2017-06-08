@@ -108,6 +108,11 @@ configure {
             }
 			trigger('failure'){
 			condition('FAILED')
+			parameters {
+                      predefinedProp('CUSTOM_WORKSPACE', '$CUSTOM_WORKSPACE')
+					  predefinedProp('CUSTOM_BUILD_ID', '$CUSTOM_BUILD_ID')
+
+                }
 			}
       }  }
     }
