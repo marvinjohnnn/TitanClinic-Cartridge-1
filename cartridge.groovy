@@ -96,7 +96,7 @@ configure {
 	
 					
 	publishers{
-	
+			mailer('afurongamielchrysdin@gmail.com', false, true)
      		 downstreamParameterized {
             trigger('ansible-job') {
             condition('SUCCESS')
@@ -119,15 +119,6 @@ configure {
 	}	
 		
 		
-
-def failed = folder + "/failure"
-	freeStyleJob(failed)	
-	{
-	
-	publishers{
-			 mailer('afurongamielchrysdin@gmail.com', false, true)
-		}
-	}
 	
 	
 	
