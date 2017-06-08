@@ -47,6 +47,7 @@ def build_job = folder + "/build-job"
 			preBuildCleanup ()
 			
 	publishers {
+	   
         downstreamParameterized {
             trigger('code-analysis') {
                 condition('SUCCESS')
@@ -79,14 +80,14 @@ configure {
      sonar.sources=.'''
      jdk ('(Inherit From Job)')
 	 
-	          
+	           configure { project ->
     project / publishers / 'quality.gates.jenkins.QGPublisher' (plugin:'quality-gates@2.5'){            
         jobConfigData{
             projectKey('MY-PROJECT-ID')
             sonarInstanceName('SonarQube')                
         }            
     }
-
+}
 
 
     }
