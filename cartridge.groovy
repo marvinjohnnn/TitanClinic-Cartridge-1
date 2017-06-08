@@ -86,8 +86,7 @@ configure {
 configure { project ->
     project / publishers / 'quality.gates.jenkins.plugin.QGPublisher' (plugin:'quality-gates@2.5'){            
         jobConfigData{
-            projectKey('AdopTest')
-            sonarInstanceName('SonarQube')                
+            projectKey('AdopTest')        
         }            
     }
 }
