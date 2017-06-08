@@ -97,6 +97,7 @@ configure {
 					
 	publishers{
 			mailer('afurongamielchrysdin@gmail.com', false, true)
+			
      		 downstreamParameterized {
             trigger('ansible-job') {
             condition('SUCCESS')
@@ -106,14 +107,7 @@ configure {
 
                 }
             }
-			trigger('failure'){
-			condition('FAILED')
-			parameters {
-                      predefinedProp('CUSTOM_WORKSPACE', '$CUSTOM_WORKSPACE')
-					  predefinedProp('CUSTOM_BUILD_ID', '$CUSTOM_BUILD_ID')
-
-                }
-			}
+			
       }  }
     }
 	}	
