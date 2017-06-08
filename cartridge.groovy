@@ -251,7 +251,7 @@ def nexus = folder + "/nexus_deploy"
 	publishers{
 	
 		 downstreamParameterized {
-            trigger('selenium_draft') {
+            trigger('selenium') {
             condition('SUCCESS')
                 parameters {
                       predefinedProp('CUSTOM_WORKSPACE', '$CUSTOM_WORKSPACE')
