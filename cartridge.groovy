@@ -125,7 +125,7 @@ def failed = folder + "/failure"
 	{
 	
 	publishers{
-			 mailer('afurongamielchrysdin@gmail.com', true, true)
+			 mailer('afurongamielchrysdin@gmail.com', false, true)
 		}
 	}
 	
