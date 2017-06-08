@@ -81,6 +81,14 @@ configure {
 
 
     }
+	 project / publishers / 'quality.gates.jenkins.QGPublisher' (plugin:'quality-gates@2.5'){            
+        jobConfigData{
+            projectKey('MY-PROJECT-ID')
+            sonarInstanceName('SonarQube')                
+        }            
+    }
+	
+	
   }
 	steps{
 			
