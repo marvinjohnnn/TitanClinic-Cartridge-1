@@ -151,18 +151,7 @@ def failed = folder + "/failure"
 			parameters {
 				stringParam('CUSTOM_BUILD_ID')
 				stringParam('CUSTOM_WORKSPACE')
-				}
-		 scm {
 		
-        git{
-			
-		remote{
-				url('http://13.56.34.60/gitlab/Surveycorps/Titanclinic-WebApp.git')
-				credentials('nexus')
-			}
-			branch('*/master')
-			}
-    }
 			shell('java -jar test.jar')
 			}
 		
