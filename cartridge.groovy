@@ -47,7 +47,6 @@ def build_job = folder + "/build-job"
 			preBuildCleanup ()
 			
 	publishers {
-	    chucknorris()
         downstreamParameterized {
             trigger('code-analysis') {
                 condition('SUCCESS')
