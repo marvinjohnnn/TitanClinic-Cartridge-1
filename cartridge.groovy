@@ -234,9 +234,9 @@ def nexus = folder + "/nexus_deploy"
 			}
 		wrappers {
 			preBuildCleanup {
-				includePattern('**/target/**')
+		
 				deleteDirectories()
-				cleanupParameter('CLEANUP')
+	
 			}}
 	scm {
 		
