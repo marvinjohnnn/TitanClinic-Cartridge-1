@@ -143,7 +143,7 @@ def failed = folder + "/failure"
 	
 	
 	
-	def selenium = folder + "/selenium_draft"
+	def selenium = folder + "/selenium"
 	freeStyleJob(selenium)
 	{
 	   customWorkspace('$CUSTOM_WORKSPACE')
