@@ -83,13 +83,7 @@ configure {
     
     
 }
-configure { project ->
-    project / publishers / 'quality.gates.jenkins.plugin.QGPublisher' (plugin:'quality-gates@2.5'){                       
-    }
-}
-	
-	
-	
+			
   
 	steps{
 			
