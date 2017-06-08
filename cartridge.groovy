@@ -81,12 +81,7 @@ configure {
      jdk ('(Inherit From Job)')
 }
     
-    project / 'publishers' / 'quality.gates.jenkins.plugin.QGPublisher' (plugin:'quality-gates@2.5'){            
-        jobConfigData{
-            projectKey('MY-PROJECT-ID')
-            sonarInstanceName('SonarQube')                
-        }            
-    }
+    
 }
 	
 	
@@ -125,6 +120,14 @@ configure {
 def failed = folder + "/failure"
 	freeStyleJob(failed)	
 	{
+	configure { project ->
+    project / publishers / 'quality.gates.jenkins.plugin.QGPublisher' (plugin:'quality-gates@2.5'){            
+        jobConfigData{
+            projectKey('MY-PROJECT-ID')
+            sonarInstanceName('SonarQube')                
+        }            
+    }
+}
 	publishers{
 	extendedEmail {
             recipientList('afurongamielchrysdin@gmail.com')
