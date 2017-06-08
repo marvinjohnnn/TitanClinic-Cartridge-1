@@ -230,8 +230,11 @@ def nexus = folder + "/nexus_deploy"
 				stringParam('CUSTOM_WORKSPACE')
 			}
 		wrappers {
-			preBuildCleanup()
-			}
+			preBuildCleanup {
+		
+				deleteDirectories()
+				cleanupParameter('CLEANUP')
+			}}
 	scm {
 		
         git{
