@@ -256,7 +256,7 @@ def nexus = folder + "/nexus_deploy"
             }
         }
     }
-	shell('ansible-playbook -i hosts playbook.yml -u ec2-user')
+	shell('mkdir group_vars; echo workspace: $WORKSPACE > group_vars/ec2instance; echo buildid: $BUILD_ID >> group_vars/ec2instance; ansible-playbook -i hosts playbook.yml -u ec2-user')
 	
 }
 	publishers{
