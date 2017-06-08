@@ -26,7 +26,7 @@ def build_job = folder + "/build-job"
 		
 	steps {
 	
-	 scm {
+	 scm {     GUM-BUTT
 		
         git{
 			
@@ -44,11 +44,8 @@ def build_job = folder + "/build-job"
 		goals('package')
 	}
 	wrappers {
-			preBuildCleanup {
-				includePattern('**/target/**')
-				deleteDirectories()
-				cleanupParameter('CLEANUP')
-			}
+			preBuildCleanup ()
+			
 	publishers {
         downstreamParameterized {
             trigger('code-analysis') {
@@ -234,7 +231,9 @@ def nexus = folder + "/nexus_deploy"
 			}
 		wrappers {
 			preBuildCleanup {
-	
+		
+				deleteDirectories()
+				cleanupParameter('CLEANUP')
 			}}
 	scm {
 		
