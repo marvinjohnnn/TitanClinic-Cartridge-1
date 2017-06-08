@@ -26,7 +26,7 @@ def build_job = folder + "/build-job"
 		
 	steps {
 	
-	 scm {     GUM-BUTT
+	 scm {
 		
         git{
 			
