@@ -125,24 +125,7 @@ def failed = folder + "/failure"
 	{
 	
 	publishers{
-	extendedEmail {
-            recipientList('afurongamielchrysdin@gmail.com')
-            defaultSubject('CODE failed on sonarqube test')
-            defaultContent('the code submitted failed to pass the sonarqube test and must be repaired')
-            contentType('text/html')
-            triggers {
-                beforeBuild()
-                stillUnstable {
-                    subject('ERROR ON BUILD')
-                    content('the code submitted failed to pass the sonarqube test and must be repaired')
-                    sendTo {
-                        developers()
-                        requester()
-                        culprits()
-                    }
-                }
-            }
-        }
+			 mailer('afurongamielchrysdin@gmail.com', true, true)
 		}
 	}
 	
