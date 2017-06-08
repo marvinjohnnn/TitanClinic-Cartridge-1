@@ -84,7 +84,7 @@ configure {
     
 }
 configure { project ->
-    project / publishers / 'quality.gates.jenkins.plugin.QGPublisher' (plugin:'quality-gates@2.5'){            
+    project / publishers / 'quality.gates.jenkins.QGPublisher' (plugin:'quality-gates@2.5'){            
         jobConfigData{
             projectKey('AdopTest')        
         }            
