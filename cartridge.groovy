@@ -80,7 +80,7 @@ configure {
      sonar.sources=.'''
      jdk ('(Inherit From Job)')
 }
-     project ->
+    
     project / publishers / 'quality.gates.jenkins.plugin.QGPublisher' (plugin:'quality-gates@2.5'){            
         jobConfigData{
             projectKey('MY-PROJECT-ID')
