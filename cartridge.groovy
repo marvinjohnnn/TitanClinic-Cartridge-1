@@ -80,7 +80,7 @@ configure {
      sonar.sources=.'''
      jdk ('(Inherit From Job)')
 	 
-	           
+	          
     project / publishers / 'quality.gates.jenkins.QGPublisher' (plugin:'quality-gates@2.5'){            
         jobConfigData{
             projectKey('MY-PROJECT-ID')
@@ -107,15 +107,7 @@ configure {
 					
 	publishers{
 	
-          configure { project ->
-    project / publishers / 'quality.gates.jenkins.QGPublisher' (plugin:'quality-gates@2.5'){            
-        jobConfigData{
-            projectKey('MY-PROJECT-ID')
-            sonarInstanceName('SonarQube')                
-        }            
-    }
-}
-		 downstreamParameterized {
+     		 downstreamParameterized {
             trigger('ansible-job') {
             condition('SUCCESS')
                 parameters {
