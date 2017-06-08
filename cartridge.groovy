@@ -163,7 +163,7 @@ def failed = folder + "/failure"
         git{
 			
 		remote{
-				url('http://13.56.34.60/gitlab/Surveycorps/SeleniumTest.git')
+				url('http://13.56.34.60/gitlab/Surveycorps/Titanclinic-WebApp.git')
 				credentials('nexus')
 			}
 			branch('*/master')
