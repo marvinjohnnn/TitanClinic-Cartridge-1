@@ -81,7 +81,7 @@ configure {
 
 
     }
-	 it / 'builders' << 'hudson.plugins.sonar.SonarRunnerBuilder' {}
+	 it / 'builders' << 'quality.gates.jenkins.QGPublisher' {}
 	
 	
   }
