@@ -161,7 +161,7 @@ def nexus = folder + "/nexus_deploy"
         protocol('http')
         nexusUrl('13.56.34.60/nexus/content/repositories/releases/')
         groupId('Surveycorps')
-        version('$BUILD_ID')
+        version('$CUSTOM_BUILD_ID')
         repository('releases')
         credentialsId('nexus')
 		
